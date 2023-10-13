@@ -1,6 +1,6 @@
 # bpa-website
 Workflow is this:
-Corey first day (frontend)
-Caleb second day (backend)
-Michael third day (polish/debug)
+Cresythe first day (frontend)
+Zero second day (backend)
+Shadow third day (polish/debug)
 Rinse, repeat
