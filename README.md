@@ -1,4 +1,4 @@
-# BPA-Website - testing (will remove)
+# BPA-Website
 Workflow is this:
 Cresythe first day (frontend)
 Zero second day (backend)
