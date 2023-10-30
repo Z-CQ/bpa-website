@@ -12,6 +12,7 @@ header {
 li {
     padding-left: 28%;
     font-size: larger;
+    display: inline-block;
 }
 a {
     outline: none;
