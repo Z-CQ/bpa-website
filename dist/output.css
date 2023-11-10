@@ -577,16 +577,12 @@ video {
   height: 3rem;
 }
 
-.h-60 {
-  height: 15rem;
-}
-
 .h-64 {
   height: 16rem;
 }
 
 .w-64 {
-  width: 16rem;
+  /* width: 16rem; */
 }
 
 .w-full {
@@ -644,4 +640,10 @@ nav a {
   height: 100vh;
   overflow-y: auto;
   transform: translateY(-23rem);
+}
+
+.item_1 {
+  border: 1rem;
+  border-color: black;
+  border-radius: .05rem;
 }

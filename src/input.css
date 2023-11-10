@@ -15,5 +15,7 @@ nav a {
     transform: translateY(-23rem);
 }
 .item_1 {
-    
+    border: 1rem;
+    border-color: black;
+    border-radius: .05rem; 
 }
