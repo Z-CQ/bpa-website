@@ -1,0 +1,41 @@
+$text-color: #292929; 
+$link-color: #000; 
+.logo1 {
+    width: 8rem;
+    height: auto;
+    display: flow;
+    margin: auto;
+}
+nav{
+    text-align: center;
+    margin-right: 10rem;
+}
+nav ul {
+    color: $text-color;
+    display: inline-block;
+    text-align: left;
+}
+li {
+    display: inherit;
+    margin-left: 8rem;
+    
+}
+a:link {
+    text-decoration: none;
+    color: $link-color;
+}
+  
+a:visited {
+    text-decoration: none;
+    color: $link-color;
+}
+  
+a:hover {
+    text-decoration: underline;
+    color: $link-color; 
+}
+  
+a:active {
+    text-decoration: underline;
+    color: $link-color;
+}
