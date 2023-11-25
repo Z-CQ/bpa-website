@@ -7,14 +7,17 @@
     <link rel="stylesheet" type="text/css" href="./css/main.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo1">
+  <div class="logo1">
+    <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
+  </div>
+  <header id="myHeader">
+    <!-- <div class="logo1">
       <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
-    </div>
+    </div> -->
     <nav>
       <ul>
         <li>
-         <a href="index.html">Home</a> 
+         <a class="active" href="index.html">Home</a> 
         </li>
         <li>
           <a href="menu.html">Menu</a>
@@ -22,13 +25,48 @@
         <li>
           <a href="pricing.html">Pricing</a>
         </li>
-        <li>
-          <a href="about.html">About</a>
+        <li style="margin: 1vh 29vw; width: fit-content;">
+          <h1 class="title">Game Day Grill</h1>
         </li>
+        <li style="float: right;">
+          <a  href="about.html">About</a>
+        </li>
+        
       </ul>
     </nav>
+    <div class="blackBar"></div>
   </header>
+  <section class="food">
+  <div class="catering">
+    <img src="/imgs/grilledSteaks.jpg" alt="picture of grilled Steak">
+  </div>
+  <div class="catering">
+    <img src="/imgs/grillecChicken.jpg" alt="picture of grilled chicken">
+  </div>
+  </section>
+  <footer>
+    <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
+  </footer>
+  <script>// When the user scrolls the page, execute myFunction
+    window.onscroll = function() {stickyHeader()};
     
+    // Get the header
+    var header = document.getElementById("myHeader");
+    
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    var li = document.getElementsByClassName("title"); 
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function stickyHeader() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        document.querySelector('h1').classList.remove('title');
+      } else {
+        header.classList.remove("sticky");
+        document.querySelector('h1').classList.add('title');
+      }
+    }</script>
 </body>
 
 </html>
