@@ -126,6 +126,18 @@ span{
        height: auto;
     } 
 }
+.options{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    div{
+        text-align: center;
+        flex: .375rem;
+    }
+}
 a:link {
     text-decoration: none;
     color: $link-color;
