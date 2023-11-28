@@ -275,6 +275,7 @@ margin-right: 2rem;
 .checkoutBox{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
         input{
             flex: 1rem;
             margin-left: 1rem;
