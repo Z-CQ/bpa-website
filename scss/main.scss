@@ -107,7 +107,7 @@ span{
     background-color: #fff;
     width: 100%;
     // bottom: -100vh;
-    top: 100vh;
+    top: 50vh;
     text-align: center;
     overflow: hidden;
 } 
@@ -203,6 +203,17 @@ div.grilled{
 h3.menu{
     text-align: center;
     font-size: xx-large;
+}
+.eventsDesc{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    div{
+        flex: .375rem;
+        -ms-flex-align: center;
+        text-align: left;
+        padding-left: 5rem;
+    }
 }
 .button{
     margin-bottom: 1rem;
