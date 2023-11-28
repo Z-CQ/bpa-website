@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Checkout</title>
     <link rel="stylesheet" type="text/css" href="./css/main.min.css">
 </head>
 <body>
@@ -37,17 +37,47 @@
     </nav>
     <div class="blackBar"></div>
   </header>
-  <h2 class="menu">Game Day Grill - Cart</h2>
-  <section class="itemContainer">
-    <div>
-    <button type="button" class="button checkout"><a href="checkout.html">Proceed to Checkout</a></button>
-    <h2 class="cartLabel">Your Cart</h2>
-    <div class="itemHolder">
-
+  <h2 class="menu">Game Day Grill - Checkout</h2>
+  <div class="cardSelection">
+    <p>Select Card Type</p>
+    <select id="card_type">
+        <option value="american-express">American Express</option>
+        <option value="visa">Visa</option>
+        <option value="paypal">PayPal</option>
+    </select>
+  </div>
+  <div class="cardInfo">
+    <h2 class="menu check">Payment</h2>
+    <div class="check">
+    <label for="FcardName">Name on card:</label>
+    <input type="text" name="fcardName" id="fcardName" placeholder="Jane More Doe" required>
+    <label for="CCNum">Credit Card Number:</label>
+    <input type="text" name="CCNum" id="CCNum" placeholder="2222-3333-4444-5555" required>
+    <label for="ExMonth">Exp Date:</label>
+    <input type="text" name="ExMonth" id="ExMonth" placeholder="04/12" required>
+    <label for="Ccv">CCV:</label>
+    <input type="text" name="Ccv" id="Ccv" placeholder="231" required>
     </div>
-    </div>
-    <div class="menu subtotal">Subtotal: <a class="Total"></a></div>
-  </section>
+  </div>
+  <h2 class="menu check">Personal</h2>
+  <section class="checkoutBox">
+    <label for="fname">Full Name:</label>
+    <input type="text" name="fname" id="fname" placeholder="Jane M. Doe" required>
+    <label for="faddress">Address:</label>
+    <input type="text" name="faddress" id="faddress" placeholder="376 W. 49th Street" required>
+    <label for="femail">Email:</label>
+    <input type="email" name="femail" id="femail" placeholder="Jane@example.com" required>
+    <label for="fcity">City:</label>
+    <input type="text" name="fcity" id="fcity" placeholder="Muskegon" required>
+    <label for="fState">State:</label>
+    <input type="text" name="fState" id="fState" placeholder="MI" required>
+    <label for="fzip">Zip:</label>
+    <input type="text" name="fzip" id="fzip" placeholder="49443" required>
+</section>
+<div>
+    <input class="button check" type=submit" value="Place Order" readonly>
+</div>
+  
   <footer>
     <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
   </footer>

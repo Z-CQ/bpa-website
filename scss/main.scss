@@ -224,6 +224,24 @@ h3.menu{
     border-radius: .275rem;
     transition-duration: .4s;
     padding: .5rem;
+    a:link {
+        text-decoration: none;
+        color:$newLink-color;
+    }
+      
+    a:visited {
+        text-decoration: none;
+        color:$newLink-color;
+    } 
+    a:hover {
+        text-decoration: none;
+        color: white; 
+    }
+      
+    a:active {
+        text-decoration: none;
+        color: white;
+    }
 }
 .button:hover{
     background-color: #000;
@@ -234,6 +252,70 @@ h3.menu{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
     font-weight: 400;
+}
+.itemHolder{
+    width: 50%;
+    height: 40rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 2rem auto;
+    background-color: white;
+}
+.cartLabel{
+    width: 50%;
+    margin:auto;
+    border-bottom: 2px solid #000;
+    background-color: #fff;
+}
+
+.checkout{
+float: right;
+margin-right: 2rem;
+}
+.checkoutBox{
+    display: flex;
+    flex-direction: row;
+        input{
+            flex: 1rem;
+            margin-left: 1rem;
+        }
+    width: 75%;
+    margin: auto;
+    padding: 1rem;
+    label{
+        margin-left: 1rem;
+    }
+}
+.cardSelection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    p{
+        margin-right: 50rem;
+    }
+    select{
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 15px rgba($color: #000000, $alpha: .1);
+        font-size: 16px;
+        width: 50%;
+        box-sizing: border-box;
+        appearance: none;
+        
+    }
+}
+.subtotal{
+    text-align: center;
+    margin: 1rem;
+}
+.check{
+    margin-left:15rem;
+}
+.blur {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 a:link {
     text-decoration: none;
