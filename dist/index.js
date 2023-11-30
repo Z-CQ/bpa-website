@@ -1,3 +1,5 @@
+// <img width="24" class="card-icon" src="imgs/logos/visa.png">
+
 var prices = {
     "grilled-steak": 4.99,
     "grilled-chicken": 6.49,
@@ -15,6 +17,10 @@ let cart = [];
 
 if(document.cookie.includes("cart="))
     loadCart();
+
+function isNumber(s) {
+    return /^-?\d+$/.test(s);
+}
 
 function getTotal() {
     let total = 0;
@@ -57,3 +63,46 @@ for(let i = 0; i < document.getElementsByClassName("button").length; i++) {
         saveCart();
     });
 }
+
+document.getElementById("CCNum").addEventListener("input", () =>{
+    let content = document.getElementById("CCNum").value;
+    let last = content.charAt(content.length - 1);
+    if(!isNumber(last) || content.length >= 19) {
+        document.getElementById("CCNum").value = content.substring(0, content.length - 1)
+    }
+    if(content.length != 0) {
+        if(content.includes("-")) {
+            if(content.length % 5 == 0) {
+                document.getElementById("CCNum").value = content + '-';
+            }
+        } else {
+            if(content.length % 4 == 0) {
+                document.getElementById("CCNum").value = content + '-';
+            }
+        }
+    }
+});
+
+document.getElementById("ExMonth").addEventListener("input", () =>{
+    let content = document.getElementById("ExMonth").value;
+    let last = content.charAt(content.length - 1);
+    if(!isNumber(last)) {
+        document.getElementById("ExMonth").value = content.substring(0, content.length - 1)
+    }
+});
+
+document.getElementById("Ccv").addEventListener("input", () =>{
+    let content = document.getElementById("Ccv").value;
+    let last = content.charAt(content.length - 1);
+    if(!isNumber(last)) {
+        document.getElementById("Ccv").value = content.substring(0, content.length - 1)
+    }
+});
+
+document.getElementById("fphone").addEventListener("input", () =>{
+    let content = document.getElementById("fphone").value;
+    let last = content.charAt(content.length - 1);
+    if(!isNumber(last)) {
+        document.getElementById("fphone").value = content.substring(0, content.length - 1)
+    }
+});
