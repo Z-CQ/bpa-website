@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.min.css">
+</head>
+<body>
+  <header id="myHeader">
+    <!-- <div class="logo1">
+      <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
+    </div> -->
+    <nav>
+      <ul>
+        <li>
+         <a  href="index.html">Home</a> 
+        </li>
+        <li>
+          <a href="menu.html">Menu</a>
+        </li>
+        <li>
+          <a href="events.html">Events</a>
+        </li>
+        <li style="margin: 1vh 29vw; width: fit-content; padding-left: 5rem ;">
+          <h1>Game Day Grill</h1>
+        </li>
+        <li style="float: right;">
+          <a class="active" href="cart.html">Cart</a>
+        </li>
+        <li style="float: right;">
+          <a  href="about.html">About</a>
+        </li>
+        
+      </ul>
+      </ul>
+    </nav>
+    <div class="blackBar"></div>
+  </header>
+  <h2 class="menu">Game Day Grill - Checkout</h2>
+  <div class="cardSelection">
+    <p>Select Card Type</p>
+    <select id="card_type">
+        <option value="american-express">American Express</option>
+        <option value="visa">Visa</option>
+        <option value="paypal">PayPal</option>
+    </select>
+  </div>
+  <div class="cardInfo">
+    <h2 class="menu check">Payment</h2>
+    <div class="check">
+    <label for="FcardName">Name on card:</label>
+    <input type="text" name="fcardName" id="fcardName" placeholder="Jane More Doe" required>
+    <label for="CCNum">Credit Card Number:</label>
+    <input type="text" name="CCNum" id="CCNum" placeholder="2222-3333-4444-5555" required>
+    <label for="ExMonth">Exp Date:</label>
+    <input type="text" name="ExMonth" id="ExMonth" placeholder="04/12" required>
+    <label for="Ccv">CCV:</label>
+    <input type="text" name="Ccv" id="Ccv" placeholder="231" required>
+    </div>
+  </div>
+  <h2 class="menu check">Personal</h2>
+  <section class="checkoutBox">
+    <label for="fname">Full Name:</label>
+    <input type="text" name="fname" id="fname" placeholder="Jane M. Doe" required>
+    <label for="faddress">Address:</label>
+    <input type="text" name="faddress" id="faddress" placeholder="376 W. 49th Street" required>
+    <label for="femail">Email:</label>
+    <input type="email" name="femail" id="femail" placeholder="Jane@example.com" required>
+    <label for="fcity">City:</label>
+    <input type="text" name="fcity" id="fcity" placeholder="Muskegon" required>
+    <label for="fState">State:</label>
+    <input type="text" name="fState" id="fState" placeholder="MI" required>
+    <label for="fzip">Zip:</label>
+    <input type="text" name="fzip" id="fzip" placeholder="49443" required>
+</section>
+<div>
+    <input class="button check" type=submit" value="Place Order" readonly>
+</div>
+  
+  <footer>
+    <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
+  </footer>
+  <script>// When the user scrolls the page, execute myFunction
+    window.onscroll = function() {stickyHeader()};
+    
+    // Get the header
+    var header = document.getElementById("myHeader");
+    
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    var li = document.getElementsByClassName("title"); 
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function stickyHeader() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        document.querySelector('h1').classList.remove('title');
+      } else {
+        header.classList.remove("sticky");
+        document.querySelector('h1').classList.add('title');
+      }
+    }</script>
+</body>
+
+</html>
