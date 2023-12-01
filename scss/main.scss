@@ -107,7 +107,7 @@ span{
     background-color: #fff;
     width: 100%;
     // bottom: -100vh;
-    top: 50vh;
+    top: 75vh;
     text-align: center;
     overflow: hidden;
 } 
@@ -262,10 +262,6 @@ h3.menu{
     background-color: white;
     display: flex;
     flex-direction: column;
-        p{
-            flex:20px
-            
-        }
        p::first-letter{
             display: block;
             text-transform: capitalize;
