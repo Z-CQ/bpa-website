@@ -15,6 +15,7 @@ var prices = {
 };
 let cart = [];
 
+
 if(document.cookie.includes("cart="))
     loadCart();
 
@@ -24,11 +25,13 @@ function isNumber(s) {
 
 function getTotal() {
     let total = 0;
+    let newTotal = 0; 
     cart.forEach(item => {
         let price = Object.values(item)[0];
         total += price;
+        newTotal = Math.round(total*100)/100; 
     })
-    return total;
+    return newTotal;
 }
 
 function saveCart() {

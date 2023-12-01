@@ -42,11 +42,11 @@
     <div>
     <button type="button" class="button checkout"><a href="checkout.html">Proceed to Checkout</a></button>
     <h2 class="cartLabel">Your Cart</h2>
-    <div class="itemHolder">
+    <div class="itemHolder" id="itemHolder">
 
     </div>
     </div>
-    <div class="menu subtotal">Subtotal: <a class="Total"></a></div>
+    <div class="menu subtotal">Subtotal: <a id="total"></a></div>
   </section>
   <footer>
     <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
@@ -70,7 +70,28 @@
         header.classList.remove("sticky");
         document.querySelector('h1').classList.add('title');
       }
+    
     }</script>
+    <script>
+      window.onload = function(){getCart()};
+      
+      function getCart(){
+      loadCart(); 
+      cart.forEach(item => {
+        const product = document.createElement("p.item");
+        const price = document.createElement("p");
+        const removeButton = document.createElement("button");  
+        product.innerText = Object.keys(item)[0]; 
+        price.innerText = Object.values(item)[0];
+        removeButton.innerText = "Delete";  
+        document.getElementById("itemHolder").appendChild(product);
+        document.getElementById("itemHolder").appendChild(price);
+        document.getElementById("itemHolder").appendChild(removeButton); 
+    });
+    document.getElementById("total").append("$" +getTotal());  
+} 
+    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
