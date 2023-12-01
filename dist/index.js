@@ -64,45 +64,119 @@ for(let i = 0; i < document.getElementsByClassName("button").length; i++) {
     });
 }
 
-document.getElementById("CCNum").addEventListener("input", () =>{
+
+document.getElementById("CCNum").addEventListener("paste", (e) => {
+    if(e.cancelable) {
+        e.preventDefault();
+    }
+});
+document.getElementById("CCNum").addEventListener("input", () => {
     let content = document.getElementById("CCNum").value;
     let last = content.charAt(content.length - 1);
-    if(!isNumber(last) || content.length >= 19) {
-        document.getElementById("CCNum").value = content.substring(0, content.length - 1)
+    if(!isNumber(last) || content.length > 19) {
+        document.getElementById("CCNum").value = content.substring(0, content.length - 1);
+        return;
     }
     if(content.length != 0) {
-        if(content.includes("-")) {
-            if(content.length % 5 == 0) {
-                document.getElementById("CCNum").value = content + '-';
-            }
-        } else {
-            if(content.length % 4 == 0) {
-                document.getElementById("CCNum").value = content + '-';
-            }
+        if(content.length % 5 == 0 && content.length < 20) {
+            document.getElementById("CCNum").value = content.substring(0, content.length - 1);
+            document.getElementById("CCNum").value += "-" + last;
+        }
+    }
+
+    content = document.getElementById("CCNum").value;
+    if(content.endsWith("--")) {
+        document.getElementById("CCNum").value = content.substring(0, content.length - 1);
+    }
+    
+});
+
+document.getElementById("ExMonth").addEventListener("paste", (e) => {
+    if(e.cancelable) {
+        e.preventDefault();
+    }
+});
+document.getElementById("ExMonth").addEventListener("input", () =>{
+    let content = document.getElementById("ExMonth").value;
+    let last = content.charAt(content.length - 1);
+    if(!isNumber(last) || content.length > 5) {
+        document.getElementById("ExMonth").value = content.substring(0, content.length - 1)
+        return;
+    }
+
+    if(content.length != 0) {
+        if(content.length % 3 == 0 && content.length < 5) {
+            document.getElementById("ExMonth").value = content.substring(0, content.length - 1);
+            document.getElementById("ExMonth").value += "/" + last;
         }
     }
 });
 
-document.getElementById("ExMonth").addEventListener("input", () =>{
-    let content = document.getElementById("ExMonth").value;
-    let last = content.charAt(content.length - 1);
-    if(!isNumber(last)) {
-        document.getElementById("ExMonth").value = content.substring(0, content.length - 1)
+document.getElementById("Ccv").addEventListener("paste", (e) => {
+    if(e.cancelable) {
+        e.preventDefault();
     }
 });
-
 document.getElementById("Ccv").addEventListener("input", () =>{
     let content = document.getElementById("Ccv").value;
     let last = content.charAt(content.length - 1);
-    if(!isNumber(last)) {
+    if(!isNumber(last) || content.length > 3) {
         document.getElementById("Ccv").value = content.substring(0, content.length - 1)
     }
 });
 
+document.getElementById("fphone").addEventListener("paste", (e) => {
+    if(e.cancelable) {
+        e.preventDefault();
+    }
+});
 document.getElementById("fphone").addEventListener("input", () =>{
     let content = document.getElementById("fphone").value;
     let last = content.charAt(content.length - 1);
-    if(!isNumber(last)) {
-        document.getElementById("fphone").value = content.substring(0, content.length - 1)
+    if(!isNumber(last) || content.length > 12) {
+        document.getElementById("fphone").value = content.substring(0, content.length - 1);
+        return;
+    }
+    if(content.length != 0) {
+        if(content.length % 4 == 0 && content.length < 7) {
+            document.getElementById("fphone").value = content.substring(0, content.length - 1);
+            document.getElementById("fphone").value += "-" + last;
+        } else if(content.length % 8 == 0) {
+            document.getElementById("fphone").value = content.substring(0, content.length - 1);
+            document.getElementById("fphone").value += "-" + last;
+        }
+    }
+
+    content = document.getElementById("fphone").value;
+    if(content.endsWith("--")) {
+        document.getElementById("fphone").value = content.substring(0, content.length - 1);
     }
 });
+
+document.getElementById("checkout-confirm").addEventListener("click", () => {
+    let cname = document.getElementById("fcardName").value;
+    let cardNum = document.getElementById("CCNum").value;
+    let exp = document.getElementById("ExMonth").value;
+    let ccv = document.getElementById("Ccv").value;
+
+    let name = document.getElementById("fname").value;
+    let email = document.getElementById("femail").value;
+    let phone = document.getElementById("fphone").value;
+
+    if(cname.length <= 0 || cardNum.length != 19 || exp.length != 5 || ccv.length != 3
+        || name.length <= 0 || email.length <= 0 || !(email.endsWith(".com") || email.endsWith(".net") || email.endsWith(".org"))
+        || phone.length != 12) {
+            console.log("Missing required fields.");
+            return;
+        }
+
+    document.getElementsByClassName("cardInfo").item(0).remove();
+    document.getElementsByClassName("checkoutBox").item(0).remove();
+    document.getElementsByClassName("menu check").item(0).remove();
+    document.getElementById("checkout-confirm").remove();
+    
+    let targetDiv = document.getElementById("checkout-confirm-div");
+    let newHeader = document.createElement("h1");
+    newHeader.value = "Order placed.";
+    targetDiv.appendChild(newHeader);
+}); 
