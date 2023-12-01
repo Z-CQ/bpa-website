@@ -51,6 +51,7 @@
   <footer>
     <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
   </footer>
+  <script src="index.js"></script>
   <script>// When the user scrolls the page, execute myFunction
     window.onscroll = function() {stickyHeader()};
     
@@ -73,25 +74,41 @@
     
     }</script>
     <script>
-      window.onload = function(){getCart()};
+      window.onload = function(){if(document.cookie.includes("cart=")) {getCart()}};
       
       function getCart(){
-      loadCart(); 
       cart.forEach(item => {
-        const product = document.createElement("p.item");
+        const itemDiv = document.createElement("div");
+        const product = document.createElement("p");
         const price = document.createElement("p");
-        const removeButton = document.createElement("button");  
-        product.innerText = Object.keys(item)[0]; 
+        const removeButton = document.createElement("button");
+        let productName = Object.keys(item)[0].split("-").join(" ");
+        product.innerText = productName;
         price.innerText = Object.values(item)[0];
-        removeButton.innerText = "Delete";  
-        document.getElementById("itemHolder").appendChild(product);
-        document.getElementById("itemHolder").appendChild(price);
-        document.getElementById("itemHolder").appendChild(removeButton); 
+        removeButton.innerText = "Delete";
+        document.getElementById("itemHolder").appendChild(itemDiv);
+        itemDiv.appendChild(product);
+        itemDiv.appendChild(price);
+        itemDiv.appendChild(removeButton);
+        removeButton.addEventListener("click", () => {
+          let newCart = [];
+          cart.forEach(e => {
+            if(Object.keys(e)[0] !== Object.keys(item)[0])
+              newCart.push(e);
+          });
+          if(newCart == []) {
+            document.cookie = "cart=[]";
+          } else {
+            cart = newCart;
+            saveCart();
+          }
+          itemDiv.remove();
+          document.getElementById("total").innerText = "$" + getTotal();
+        });
     });
-    document.getElementById("total").append("$" +getTotal());  
+    document.getElementById("total").innerText = "$" + getTotal();
 } 
     </script>
-    <script src="index.js"></script>
 </body>
 
 </html>

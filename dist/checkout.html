@@ -41,7 +41,7 @@
   <div class="cardInfo">
     <h2 class="menu check">Payment</h2>
     <div class="check">
-    <label for="FcardName">Name on card:</label>
+    <label for="fcardName">Name on card:</label>
     <input type="text" name="fcardName" id="fcardName" placeholder="Jane More Doe" required>
     <label for="CCNum">Credit Card Number:</label>
     <input type="text" name="CCNum" id="CCNum" placeholder="2222-3333-4444-5555" required>
@@ -55,18 +55,16 @@
   <section class="checkoutBox">
     <label for="fname">Full Name:</label>
     <input type="text" name="fname" id="fname" placeholder="Jane M. Doe" required>
-    <input type="text" name="faddress" id="faddress" placeholder="376 W. 49th Street" required>
     <label for="femail">Email:</label>
     <input type="email" name="femail" id="femail" placeholder="Jane@example.com" required>
-    <label for="fcity">City:</label>
-    <input type="text" name="fcity" id="fcity" placeholder="Muskegon" required>
-    <label for="fState">State:</label>
-    <input type="text" name="fState" id="fState" placeholder="MI" required>
-    <label for="fzip">Zip:</label>
-    <input type="text" name="fzip" id="fzip" placeholder="49443" required>
+    <label for="fphone">Phone Number:</label>
+    <input type="text" name="fphone" id="fphone" placeholder="231-000-0000" required>
 </section>
 <div>
-    <input class="button check" type="submit" value="Place Order" readonly>
+    <input class="button check" type="submit" value="Place Order" id="checkout-confirm" readonly>
+</div>
+<div id="confirmed">
+  
 </div>
   
   <footer>
@@ -92,6 +90,7 @@
         document.querySelector('h1').classList.add('title');
       }
     }</script>
+    <script src="index.js"></script>
 </body>
 
 </html>

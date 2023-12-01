@@ -11,7 +11,7 @@ var prices = {
     "sliced-pork-roast": 14.99,
     "catering-burgers": 7.99,
     "catering-bbq": 12.99,
-    "katering-kebabs": 6.99
+    "catering-kebabs": 6.99
 };
 let cart = [];
 
@@ -29,8 +29,8 @@ function getTotal() {
     cart.forEach(item => {
         let price = Object.values(item)[0];
         total += price;
-        newTotal = Math.round(total*100)/100; 
-    })
+    });
+    newTotal = Math.round(total*100)/100;
     return newTotal;
 }
 
@@ -40,11 +40,14 @@ function saveCart() {
         let stringedObj = JSON.stringify(e);
         newCart.push(stringedObj);
     });
-    document.cookie = "cart=" + newCart.toString();
+    let finalCookie = "cart=" + newCart.toString() + "; path=/";
+    document.cookie = finalCookie;
 }
 
 function loadCart() {
     let stringedArray = document.cookie.split("=")[1];
+    if(stringedArray === "")
+        return;
     let newCart = [];
     stringedArray.split(",").forEach(i => {
         newCart.push(JSON.parse(i));
@@ -178,8 +181,11 @@ document.getElementById("checkout-confirm").addEventListener("click", () => {
     document.getElementsByClassName("menu check").item(0).remove();
     document.getElementById("checkout-confirm").remove();
     
-    let targetDiv = document.getElementById("checkout-confirm-div");
     let newHeader = document.createElement("h1");
-    newHeader.value = "Order placed.";
-    targetDiv.appendChild(newHeader);
+    newHeader.innerHTML = "Order placed.";
+    newHeader.className = "confirmed-info";
+    let info = document.createElement("p");
+    info.innerText = `Name: ${name}\nCard Number: ****-${cardNum.substring(15, 20)}\nPhone Number: ${phone}`;
+    document.getElementById("confirmed").appendChild(newHeader);
+    document.getElementById("confirmed").appendChild(info);
 }); 
