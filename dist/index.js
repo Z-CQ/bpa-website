@@ -188,4 +188,6 @@ document.getElementById("checkout-confirm").addEventListener("click", () => {
     info.innerText = `Name: ${name}\nCard Number: ****-${cardNum.substring(15, 20)}\nPhone Number: ${phone}`;
     document.getElementById("confirmed").appendChild(newHeader);
     document.getElementById("confirmed").appendChild(info);
+
+    document.cookie = "cart=[]";
 }); 
