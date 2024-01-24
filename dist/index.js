@@ -55,7 +55,7 @@ function loadCart() {
     cart = newCart;
 }
 
-for(let i = 0; i < document.getElementsByClassName("button").length; i++) {
+for(let i = 0; i < document.getElementsByClassName("purchase-button").length; i++) {
     let e = document.getElementsByClassName("purchase-button").item(i);
     e.addEventListener("click", ()=>{
         let id = e.id;
