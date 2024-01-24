@@ -56,7 +56,7 @@ function loadCart() {
 }
 
 for(let i = 0; i < document.getElementsByClassName("button").length; i++) {
-    let e = document.getElementsByClassName("button").item(i);
+    let e = document.getElementsByClassName("purchase-button").item(i);
     e.addEventListener("click", ()=>{
         let id = e.id;
         let price = prices[id];
