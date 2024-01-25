@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="./css/main.min.css">
 </head>
 <body>
+  <style>
+    html{
+      overflow-y: hidden;
+    }
+  </style>
   <header id="myHeader">
     <!-- <div class="logo1">
       <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
@@ -79,13 +84,15 @@
       function getCart(){
       cart.forEach(item => {
         const itemDiv = document.createElement("div");
-        const product = document.createElement("p");
+        itemDiv.classList.add("item");
+        const product = document.createElement("p"); 
         const price = document.createElement("p");
         const removeButton = document.createElement("button");
         let productName = Object.keys(item)[0].split("-").join(" ");
         product.innerText = productName;
         price.innerText = Object.values(item)[0];
         removeButton.innerText = "Delete";
+        removeButton.classList.add("button"); 
         document.getElementById("itemHolder").appendChild(itemDiv);
         itemDiv.appendChild(product);
         itemDiv.appendChild(price);
@@ -109,6 +116,7 @@
     document.getElementById("total").innerText = "$" + getTotal();
 } 
     </script>
+
 </body>
 
 </html>
