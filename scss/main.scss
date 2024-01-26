@@ -331,7 +331,7 @@ a:active {
 }
 
 .parallax1 {
-  background-image: url(https://z-cq.github.io/bpa-website/dist/imgs/charCoal.jpg);
+  background-image: url(../imgs/charCoal.jpg);
   min-height: 100dvh;
   opacity: 0.75;
 
@@ -381,7 +381,7 @@ a:active {
   position: absolute;
   left: 0;
   top: 200dvh;
-  z-index: 1;
+  z-index: 0;
   width: 100dvw;
   padding: 1rem 1rem;
   text-align: center;
@@ -395,7 +395,7 @@ a:active {
   }
 }
 .parallax3 {
-  background-image: url(../../imgs/fireGrill.jpg);
+  background-image: url("dist/imgs/fireGrill.jpg");
   min-height: 100dvh;
   opacity: 0.8;
 
