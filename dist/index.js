@@ -49,10 +49,24 @@ function loadCart() {
     if(stringedArray === "")
         return;
     let newCart = [];
-    stringedArray.split(",").forEach(i => {
-        newCart.push(JSON.parse(i));
+    let x = [];
+    stringedArray.split(",").forEach((i, ind) => {
+        try {
+            if(ind % 2 == 0) {
+                x[0] = stringedArray.split(",")[ind];
+                x[1] = stringedArray.split(",")[ind + 1];
+                console.log(JSON.parse(x.join(",")));
+                newCart.push(JSON.parse(x.join(",")));
+            }
+        } catch(e) {
+            
+        }
     });
     cart = newCart;
+}
+
+function getAmountInCart() {
+    return cart.length;
 }
 
 for(let i = 0; i < document.getElementsByClassName("purchase-button").length; i++) {
@@ -63,6 +77,8 @@ for(let i = 0; i < document.getElementsByClassName("purchase-button").length; i+
         let item = {};
         let qty = 1;
         item[id] = price * qty;
+        item["item-id"] = Math.floor(Math.random() * 999 + 1);
+        console.log(item);
         cart.push(item);
         console.log(cart);
         console.log("New Total: $" + getTotal());
@@ -189,5 +205,6 @@ document.getElementById("checkout-confirm").addEventListener("click", () => {
     document.getElementById("confirmed").appendChild(newHeader);
     document.getElementById("confirmed").appendChild(info);
 
-    document.cookie = "cart=[]";
+    cart = [];
+    saveCart();
 }); 
