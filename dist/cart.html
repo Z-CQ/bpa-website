@@ -106,13 +106,14 @@
             document.cookie = "cart=[]";
           } else {
             cart = newCart;
-            saveCart();
+            // saveCart();
           }
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
           document.getElementById("numberC").innerText = getAmountInCart(); 
         }); 
     });
+    document.getElementById("numberC").innerText = getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
 } 
     </script>
