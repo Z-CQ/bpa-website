@@ -13,7 +13,7 @@
       <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
     </div> -->
     <div class="logo2">
-      <a href="index.html"><img src="imgs/logos/logo2.nologo.png"/><h1 class="numCart"></h1></a>
+      <a href="index.html"><img src="imgs/logos/logo2.nologo.png"/><h1 class="numCart" id="numberC"></h1></a>
     </div>
     <nav>
       <ul>
@@ -112,7 +112,7 @@
           document.getElementById("total").innerText = "$" + getTotal();
         });
     });
-    document.getElementsByClassName("numCart").innerText = "" + getAmountInCart(); 
+    document.getElementById("numberC").innerText = getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
 } 
     </script>
