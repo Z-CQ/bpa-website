@@ -112,13 +112,19 @@
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
           document.getElementById("numberC").innerText = getAmountInCart(); 
-        });
-        if(getAmountInCart() > 10){
+          if(getAmountInCart() > 10){
           document.getElementById("numberC").style.left = "95dvh" 
         } else {
           document.getElementById("numberC").style.left = "97dvh" 
         }
+          
+        });
     });
+    if(getAmountInCart() > 10){
+          document.getElementById("numberC").style.left = "95dvh" 
+        } else {
+          document.getElementById("numberC").style.left = "97dvh" 
+        }
     document.getElementById("numberC").innerText = getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
 } 
