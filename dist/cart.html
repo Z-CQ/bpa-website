@@ -107,6 +107,7 @@
           } else {
             cart = newCart;
             saveCart();
+            document.getElementById("numberC").innerText = getAmountInCart(); 
           }
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
