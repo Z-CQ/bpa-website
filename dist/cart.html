@@ -111,7 +111,10 @@
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
           document.getElementById("numberC").innerText = getAmountInCart(); 
-        }); 
+        });
+        if(getAmountInCart() > 10){
+          document.getElementById("numberC").style.left = "95dvh" 
+        }
     });
     document.getElementById("numberC").innerText = getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
