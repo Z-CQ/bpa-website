@@ -63,7 +63,7 @@ header {
   width: 100%;
   padding: 0rem -1rem;
   background-color: white;
-  z-index: 1;
+  z-index: 2;
 }
 footer {
   background-color: #000;
@@ -367,7 +367,7 @@ a:active {
   overflow: hidden;
 }
 .parallax2 {
-  background-image: url("dist/imgs/grillingFlesh.jpg");
+  background-image: url(../imgs/grillingFlesh.jpg);
   min-height: 50dvh;
   opacity: 0.75;
 
@@ -381,7 +381,7 @@ a:active {
   position: absolute;
   left: 0;
   top: 200dvh;
-  z-index: 0;
+  z-index: 1;
   width: 100dvw;
   padding: 1rem 1rem;
   text-align: center;
@@ -395,7 +395,7 @@ a:active {
   }
 }
 .parallax3 {
-  background-image: url("dist/imgs/fireGrill.jpg");
+  background-image: url(../imgs/fireGrill.jpg);
   min-height: 100dvh;
   opacity: 0.8;
 
@@ -414,8 +414,23 @@ a:active {
   position: relative;
   box-shadow: 1px 4px 4px -1px grey;
 }
-.cartStyle{
+.cartStyle {
   float: right;
-
 }
-
+.logo2 {
+  width: fit-content;
+  display: flow;
+  margin: auto;
+  margin-bottom: -3rem;
+  img {
+    width: 28dvw;
+    height:auto; 
+  }
+}
+.numCart {
+  color:#000; 
+  position: absolute;
+  top: 11dvh;
+  left: 97dvh;
+  font-size: 400%;
+}

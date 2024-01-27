@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <?xml version="1.0" encoding="utf-8"?>
     <link rel="stylesheet" type="text/css" href="./css/main.min.css">
 </head>
 <body>
-  <style>
-    html{
-      overflow-y: hidden;
-    }
-  </style>
-  <header id="myHeader">
+  <header id="myHeader" class="sticky">
     <!-- <div class="logo1">
       <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
     </div> -->
+    <div class="logo2">
+      <a href="index.html"><img src="imgs/logos/logo2.nologo.png"/><h1 class="numCart"></h1></a>
+    </div>
     <nav>
       <ul>
         <li>
@@ -28,7 +27,7 @@
           <a href="events.html">Events</a>
         </li>
         <li style="margin: 1vh 29vw; width: fit-content; padding-left: 5rem ;">
-          <h1>Game Day Grill</h1>
+          <h1 style="visibility:visible;">Game Day Grill</h1>
         </li>
         <li style="float: right;">
           <a class="active" href="cart.html">Cart</a>
@@ -57,7 +56,7 @@
     <span>&copy;2023 NotGrilledFoods Provider, LLC. All rights reserved.</span>
   </footer>
   <script src="index.js"></script>
-  <script>// When the user scrolls the page, execute myFunction
+  <!-- <script>// When the user scrolls the page, execute myFunction
     window.onscroll = function() {stickyHeader()};
     
     // Get the header
@@ -77,7 +76,7 @@
         document.querySelector('h1').classList.add('title');
       }
     
-    }</script>
+    }</script> -->
     <script>
       window.onload = function(){if(document.cookie.includes("cart=")) {getCart()}};
       
@@ -113,6 +112,7 @@
           document.getElementById("total").innerText = "$" + getTotal();
         });
     });
+    document.getElementsByClassName("numCart").innerText =  getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
 } 
     </script>
