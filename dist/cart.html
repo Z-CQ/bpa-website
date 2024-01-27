@@ -106,7 +106,7 @@
             document.cookie = "cart=[]";
           } else {
             cart = newCart;
-            // saveCart();
+            saveCart();
           }
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
