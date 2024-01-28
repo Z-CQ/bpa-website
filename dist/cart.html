@@ -99,7 +99,7 @@
         removeButton.addEventListener("click", () => {
           let newCart = [];
           cart.forEach(e => {
-            if(Object.keys(e)[0] !== Object.keys(item)[0])
+            if(e !== item)
               newCart.push(e);
           });
           if(newCart == []) {
