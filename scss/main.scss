@@ -424,13 +424,21 @@ a:active {
   margin-bottom: -3rem;
   img {
     width: 28dvw;
-    height:auto; 
+    height: auto;
   }
 }
 .numCart {
-  color:#000; 
+  color: #000;
   position: absolute;
-  top: 11dvh;
-  left: 97dvh;
+  margin: auto;
+  padding-top: 3.5%;
+  top: 0dvh;
+  left: 48.75dvw;
   font-size: 400%;
+}
+.pic {
+  margin: auto;
+  padding-left: 3%;
+  margin-top: -5rem;
+  margin-bottom: -.5rem;
 }

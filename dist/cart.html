@@ -13,7 +13,7 @@
       <a href="index.html"><img src="/logos/no.2_logo.svg"/></a>
     </div> -->
     <div class="logo2">
-      <a href="index.html"><img src="imgs/logos/logo2.nologo.png"/><h1 class="numCart" id="numberC"></h1></a>
+      <a href="index.html"><img src="imgs/logos/logo2.nologo.png" class="pic"/><h1 class="numCart" id="numberC"></h1></a>
     </div>
     <nav>
       <ul>
@@ -112,18 +112,18 @@
           itemDiv.remove();
           document.getElementById("total").innerText = "$" + getTotal();
           document.getElementById("numberC").innerText = getAmountInCart(); 
-          if(getAmountInCart() > 10){
-          document.getElementById("numberC").style.left = "95dvh" 
+          if(getAmountInCart() > 9){
+          document.getElementById("numberC").style.left = "47.55dvw" 
         } else {
-          document.getElementById("numberC").style.left = "97dvh" 
+          document.getElementById("numberC").style.left = "48.75dvw" 
         }
           
         });
     });
-    if(getAmountInCart() > 10){
-          document.getElementById("numberC").style.left = "95dvh" 
+    if(getAmountInCart() > 9){
+          document.getElementById("numberC").style.left = "47.55dvw" 
         } else {
-          document.getElementById("numberC").style.left = "97dvh" 
+          document.getElementById("numberC").style.left = "48.75dvw" 
         }
     document.getElementById("numberC").innerText = getAmountInCart(); 
     document.getElementById("total").innerText = "$" + getTotal();
