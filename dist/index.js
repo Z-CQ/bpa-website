@@ -198,9 +198,11 @@ document.getElementById("checkout-confirm").addEventListener("click", () => {
     document.getElementById("checkout-confirm").remove();
     
     let newHeader = document.createElement("h1");
-    newHeader.innerHTML = "Order placed.";
+
+    newHeader.innerHTML = "Order Placed.";
     newHeader.className = "confirmed-info";
     let info = document.createElement("p");
+    info.className = "info-confirmed"; 
     info.innerText = `Name: ${name}\nCard Number: ****-${cardNum.substring(15, 20)}\nPhone Number: ${phone}`;
     document.getElementById("confirmed").appendChild(newHeader);
     document.getElementById("confirmed").appendChild(info);
